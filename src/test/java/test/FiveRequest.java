@@ -1,5 +1,6 @@
 package test;
 
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,16 +16,50 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class FiveRequest extends TestBase {
 
-    @ParameterizedTest
-    @ValueSource(strings = {"карта мап купить", "карта мап купить спб","карточка мап купить","карточка мап купить спб"})
-    void successfulSubmitFormTest(String text) throws InterruptedException {
-
+    SelenideElement
+    search = $(byXpath("//input[@tabindex='2']"));
+    
+    static void openURL() {
         open("https://yandex.ru/");
-
-        $(byXpath("//input[@tabindex='2']")).setValue(text).pressEnter();
-        Thread.sleep(2000);
+    }
+    static void clickTTC()  {
         $(By.partialLinkText("ttc.com.ru")).click();
-        Thread.sleep(2000);
+    }
 
+
+
+    @Test
+    void successfulSubmitFormTest() throws InterruptedException {
+        FiveRequest.openURL();
+        search.setValue("карта мап купить").pressEnter();
+        Thread.sleep(2000);
+        FiveRequest.clickTTC();
+        Thread.sleep(2000);
+    }
+
+    @Test
+    void successfulSubmitFormTest2() throws InterruptedException {
+        FiveRequest.openURL();
+        search.setValue("карта мап купить спб").pressEnter();
+        Thread.sleep(2000);
+        FiveRequest.clickTTC();
+        Thread.sleep(2000);
+    }
+    @Test
+    void successfulSubmitFormTest3() throws InterruptedException {
+        FiveRequest.openURL();
+        search.setValue("карточка мап купить").pressEnter();
+        Thread.sleep(2000);
+        FiveRequest.clickTTC();
+        Thread.sleep(2000);
+    }
+
+    @Test
+    void successfulSubmitFormTest4() throws InterruptedException {
+        FiveRequest.openURL();
+        search.setValue("карточка мап купить спб").pressEnter();
+        Thread.sleep(2000);
+        FiveRequest.clickTTC();
+        Thread.sleep(2000);
     }
 }
