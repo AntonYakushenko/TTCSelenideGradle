@@ -1,27 +1,12 @@
 package test;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class FiveRequest extends TestBase {
-
     Pages pages = new Pages();
-
-    @Test
-    void firstTest() throws InterruptedException {
-        pages.successfulSubmitFormTest();
-    }
-
-    @Test
-    void secondTest() throws InterruptedException {
-        pages.successfulSubmitFormTest2();
-    }
-
-    @Test
-    void thirdTest() throws InterruptedException {
-        pages.successfulSubmitFormTest3();
-    }
-
-    @Test
-    void fourthTest() throws InterruptedException {
-        pages.successfulSubmitFormTest4();
+    @ParameterizedTest
+    @ValueSource(strings = {"карта мап купить", "карта мап купить спб","карточка мап купить","карточка мап купить спб"})
+    void firstTest(String text) throws InterruptedException {
+        pages.successfulSubmitFormTest(text);
     }
 }

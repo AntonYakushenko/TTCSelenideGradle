@@ -18,30 +18,9 @@ public class Pages {
         $(By.partialLinkText("ttc.com.ru")).click();
     }
 
-     void successfulSubmitFormTest() throws InterruptedException {
+     void successfulSubmitFormTest(String text) throws InterruptedException {
         Pages.openURL();
-        search.setValue("карта мап купить").pressEnter();
-        Thread.sleep(2000);
-        Pages.clickTTC();
-        Thread.sleep(2000);
-    }
-    void successfulSubmitFormTest2() throws InterruptedException {
-        Pages.openURL();
-        search.setValue("карта мап купить спб").pressEnter();
-        Thread.sleep(2000);
-        Pages.clickTTC();
-        Thread.sleep(2000);
-    }
-    void successfulSubmitFormTest3() throws InterruptedException {
-        Pages.openURL();
-        search.setValue("карточка мап купить").pressEnter();
-        Thread.sleep(2000);
-        Pages.clickTTC();
-        Thread.sleep(2000);
-    }
-    void successfulSubmitFormTest4() throws InterruptedException {
-        Pages.openURL();
-        search.setValue("карточка мап купить спб").pressEnter();
+        search.setValue(text).pressEnter();
         Thread.sleep(2000);
         Pages.clickTTC();
         Thread.sleep(2000);
