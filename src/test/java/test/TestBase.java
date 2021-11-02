@@ -30,7 +30,7 @@ public class TestBase {
         Configuration.browserSize = "1920x1080";
         //Configuration.remote = format("https://user1:1234@%s", browserURL);
        // Configuration.remote = browserURL;
-        //Configuration.remote = "http://137.184.95.234:4444/wd/hub";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
     @AfterEach
