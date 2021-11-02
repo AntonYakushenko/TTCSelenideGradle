@@ -18,7 +18,7 @@ public class TestBase {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
-        String browser = System.getProperty("browser","chrome");
+        String browser = System.getProperty("browser","firefox");
 
 
         Configuration.browser = browser;
