@@ -22,15 +22,15 @@ public class TestBase {
 
         String browser = System.getProperty("browser","chrome");
 
-        String browserURL = System.getProperty("url","https://user1:1234@selenoid.autotests.cloud/wd/hub/");
+        //String browserURL = System.getProperty("url","https://user1:1234@selenoid.autotests.cloud/wd/hub/");
         //Configuration.remote = format("https://%s:%s", login, password, browserURL);
 
         Configuration.browser = browser;
         Configuration.browserCapabilities = capabilities;
         Configuration.browserSize = "1920x1080";
         //Configuration.remote = format("https://user1:1234@%s", browserURL);
-        Configuration.remote = browserURL;
-        //Configuration.remote = "http://137.184.95.234:4444/wd/hub";
+       // Configuration.remote = browserURL;
+        Configuration.remote = "http://137.184.95.234:4444/wd/hub";
     }
 
     @AfterEach
