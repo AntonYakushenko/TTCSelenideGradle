@@ -23,8 +23,8 @@ public class TestBase {
 
         Configuration.browser = browser;
         Configuration.browserCapabilities = capabilities;
-        Configuration.startMaximized = true;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        Configuration.browserSize = "1920x1080";
+        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
         //Configuration.remote = "http://137.184.95.234:4444/wd/hub";
     }
 
@@ -32,7 +32,7 @@ public class TestBase {
     public void tearDown() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
-        Attach.browserConsoleLogs();
+        //Attach.browserConsoleLogs();
         Attach.addVideo();
     }
 }
